@@ -1,4 +1,4 @@
-function Queue() {
+module.exports = function Queue() {
   this.dataStore = [];
   this.enqueue = enqueue;
   this.dequeue = dequeue;
@@ -32,11 +32,11 @@ function toString() {
   return retStr;
 }
 
-function empaty() {
+function empty() {
   if (this.dataStore.length === 0) {
     return true;
   } else {
     return false;
   }
-
 }
+
