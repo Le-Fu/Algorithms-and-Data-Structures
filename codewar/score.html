@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>score</title>
+</head>
+<body>
+	
+	<script>
+		// 5个6面的筛子，记分规则如下：
+		/*  3个 1 => 1000 分
+			3个 6 =>  600 分
+			3个 5 =>  500 分
+			3个 4 =>  400 分
+			3个 3 =>  300 分
+			3个 2 =>  200 分
+			1个 1 =>  100 分
+			1个 5 =>   50 分
+		*/
+		function score( dice ) {
+		    // 每个点数出现的次数，加到dc数组中。
+		  	var dc = [0,0,0,0,0,0];
+		    dice.forEach(function(x){ dc[x-1]++; });
+			// 三倍记分规则
+			var tdr = [1000,200,300,400,500,600];
+			// 一倍记分规则
+		    var sdr = [100,0,0,0,50,0];
+		    
+		    return dc.reduce(function(s,x,i){ 
+		    	return s + (x >= 3? tdr[i] : 0) + sdr[i]*(x % 3);
+			},0);
+		}
+	</script>
+</body>
+</html>
