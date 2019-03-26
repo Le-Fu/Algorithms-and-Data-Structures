@@ -13,7 +13,7 @@ class Sort {
         }
       }
     }
-    console.log('   bubbleSort', arr)
+    console.log('bubbleSort', arr)
   }
   selectionSort(arr) {
     let len = arr.length,
@@ -32,15 +32,23 @@ class Sort {
     console.log('selectionSort', arr)
   }
   insertSort(arr) {
-    let oArr = arr.slice(0,1)
-    let uArr = arr.slice(1)
-    for (let i = 0; i < oArr.length; i++) {
-      
-      
+    let len = arr.length,
+      item,
+      i,
+      j;
+    for (i = 0; i < len; i++) {
+      item = arr[i];
+      for (j = i-1; j>-1 && arr[j] > item; j--) {
+        arr[j+1] = arr[j]
+      }      
+      arr[j+1] = item;
     }
-    console.log('   insertSort', oArr, uArr)
+    console.log('insertSort', arr)
   }
-
+  combineSort(arr) {
+    
+    console.log('combineSort', arr)
+  }
 }
 
 const sort = new Sort();
@@ -49,4 +57,5 @@ let arr = [7, 13, 42, 30, 20, 11, 9, 13, 15, 2, 14, 1, 87];
 
 // sort.bubbleSort(arr)
 // sort.selectionSort(arr)
-sort.insertSort(arr)
+// sort.insertSort(arr)
+sort.combineSort(arr)
