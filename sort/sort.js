@@ -38,17 +38,38 @@ class Sort {
       j;
     for (i = 0; i < len; i++) {
       item = arr[i];
-      for (j = i-1; j>-1 && arr[j] > item; j--) {
-        arr[j+1] = arr[j]
-      }      
-      arr[j+1] = item;
+      for (j = i - 1; j > -1 && arr[j] > item; j--) {
+        arr[j + 1] = arr[j]
+      }
+      arr[j + 1] = item;
     }
     console.log('insertSort', arr)
   }
   combineSort(arr) {
-    
+
     console.log('combineSort', arr)
   }
+  shell(arr) {
+    let n = arr.length;
+    for (var gap = Math.floor(n / 2); gap > 0; gap = Math.floor(gap / 2)) {
+      console.log(gap)//3,1
+      for (let i = gap; i < n; i++) {
+        let temp = arr[i];
+        for (var j = i - gap; j > 0; j -= gap) {
+          if (arr[j] >= temp) {
+            arr[j + gap] = arr[j]
+          } else {
+            if (j != i - gap) {
+              arr[j + gap] = temp
+              break;
+            }
+          }
+        }
+      }
+    }
+    return arr
+  }
+
 }
 
 const sort = new Sort();
