@@ -9,11 +9,13 @@ function averageScore() {
   return (total / this.scores.length).toFixed();
 }
 
-var ScoreInfo = function () {
-  this.scores = [];
-  this.addScore = addScore;
-  this.averageScore = averageScore;
-};
+class ScoreInfo {
+  constructor() {
+    this.scores = [];
+    this.addScore = addScore;
+    this.averageScore = averageScore;
+  }
+}
 
 var myscore = new ScoreInfo();
 myscore.addScore(79);
