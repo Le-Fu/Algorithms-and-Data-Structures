@@ -69,8 +69,7 @@ var parse = function (o) {
 
 
 /**
- * B -> A
- * @param{object[]} a
+ * @param{object[]} o
  * @returns{object[]}
  */
 
@@ -83,7 +82,11 @@ var create = function (o) {
         return;
       }
       run(item.children = o[item._id]);
-      item._id == 1 ? rs.push(item) : null;
+      // 顶层没有parent
+      if (!item.parent) {
+        item.parent = null;
+        rs.push(item);
+      }
     }
 
   })(o[0])
@@ -105,7 +108,6 @@ var layer = function (a) {
 
     // 如果没有 parent 则是最上层
     let key = item.parent || 0;
-    key === 0 ? item.parent = null : null;
 
     if (aMap.hasOwnProperty(key)) {
       aMap[key].push(item);
