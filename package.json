@@ -1,0 +1,23 @@
+{
+  "name": "Algorithms-and-Data-Structures",
+  "version": "1.0.0",
+  "description": "* binary tree * stack * array * list * sort * recursion",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Le-Fu/Algorithms-and-Data-Structures.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Le-Fu/Algorithms-and-Data-Structures/issues"
+  },
+  "homepage": "https://github.com/Le-Fu/Algorithms-and-Data-Structures#readme",
+  "dependencies": {
+    "tslint": "^5.18.0"
+  }
+}
