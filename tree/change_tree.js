@@ -75,7 +75,7 @@ var parse = function (o) {
 
 var create = function (o) {
   let rs = [];
-  ; (function run(arr) {
+  (function run(arr) {
     for (let j = 0; j < arr.length; j++) {
       let item = arr[j];
       if (!o[item._id]) {
