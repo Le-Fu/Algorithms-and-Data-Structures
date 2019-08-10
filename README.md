@@ -7,3 +7,4 @@
 * sort
 * recursion
 * linkList
+* dict

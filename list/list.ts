@@ -18,7 +18,7 @@ interface List<T> {
 
 // type strOrNumList = List<number> | List<string>
 
-class myList<T> implements List<T> {
+class List<T> implements List<T> {
   dataStore: T[] = [];
   listSize = 0;
   pos = 0;
@@ -124,6 +124,9 @@ class myList<T> implements List<T> {
   }
 }
 
-let ml = new myList<number>()
+// let ml = new myList<number>()
 
-ml.append(4)
+// ml.append(4)
+
+
+export default  List

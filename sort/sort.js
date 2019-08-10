@@ -13,7 +13,7 @@ class Sort {
         }
       }
     }
-    console.log('bubbleSort', arr)
+    return arr
   }
   selectionSort(arr) {
     let len = arr.length,
@@ -29,6 +29,8 @@ class Sort {
         this.swap(arr, i, minIndex)
       }
     }
+    return arr
+
     console.log('selectionSort', arr)
   }
   insertSort(arr) {
@@ -43,6 +45,8 @@ class Sort {
       }
       arr[j + 1] = item;
     }
+    return arr
+
     console.log('insertSort', arr)
   }
   combineSort(arr) {
@@ -72,11 +76,5 @@ class Sort {
 
 }
 
-const sort = new Sort();
 
-let arr = [7, 13, 42, 30, 20, 11, 9, 13, 15, 2, 14, 1, 87];
-
-// sort.bubbleSort(arr)
-// sort.selectionSort(arr)
-// sort.insertSort(arr)
-sort.combineSort(arr)
+module.exports = Sort;
