@@ -47,6 +47,7 @@ class Tree implements Tree {
     }
   }
 
+  // 验证是否是二叉查找树
   static walk(root: BNode) {
     if (!root.left && !root.right) {
       return true
