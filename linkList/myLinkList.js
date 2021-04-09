@@ -1,0 +1,67 @@
+
+class Node {
+    constructor(element) {
+        this.element = element
+        this.next = null
+    }
+}
+
+class LinkList {
+    constructor(element) {
+        this.head = new Node(element)
+    }
+
+    find(item) {
+        let curNode = this.head
+        while (curNode !== null && curNode.element !== item) {
+            curNode = curNode.next
+        }
+        return curNode
+    }
+
+    insert(element, item) {
+        let newNode = new Node(element)
+        let curNode = this.find(item)
+        newNode.next = curNode.next
+        curNode.next = newNode
+    }
+
+    findPrev(item) {
+        let curNode = this.head
+        while (curNode.next !== null && curNode.next.element !== item) {
+            curNode = curNode.next
+        }
+        return curNode
+    }
+
+    remove(item) {
+        let prevNode = this.findPrev(item)
+        if (prevNode.next !== null) {
+            prevNode.next = prevNode.next.next
+        }
+    }
+
+    display() {
+        let linkListArr = []
+        let curNode = this.head
+        while (curNode !== null) {
+            linkListArr.push(curNode.element);
+            curNode = curNode.next
+        }
+        console.log(linkListArr.join(' -> '));
+    }
+
+}
+
+let ll = new LinkList(1)
+
+ll.insert(2, 1)
+ll.insert(3, 2)
+ll.insert(4, 3)
+// ll.remove(2)
+// ll.remove(4)
+// ll.remove(3)
+// console.log(ll.find(6));
+
+ll.display()
+
