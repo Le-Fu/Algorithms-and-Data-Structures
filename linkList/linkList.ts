@@ -42,11 +42,13 @@ export class List<T> implements List<T>{
   }
 
   display() {
+    let listArr = []
     let currNode = this.head
     while (!(currNode === null)) {
-      console.log(currNode.element)
+      listArr.push(currNode.element)
       currNode = currNode.next
     }
+    console.log(listArr.join(' -> '));
   }
 
   findPrevious(item: T) {
