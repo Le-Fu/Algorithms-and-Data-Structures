@@ -53,15 +53,32 @@ class LinkList {
 
 }
 
-let ll = new LinkList(1)
+let ll = new LinkList('a')
 
-ll.insert(2, 1)
-ll.insert(3, 2)
-ll.insert(4, 3)
+ll.insert('b', 'a')
+ll.insert('a', 'b')
 // ll.remove(2)
 // ll.remove(4)
 // ll.remove(3)
 // console.log(ll.find(6));
-
 ll.display()
 
+var pointer;
+function reverseLinkList(head) {
+    if (!head)
+        return true;
+    // 递归逆序遍历
+    var res0 = reverseLinkList(head.next) 
+    var res1 = pointer.element === head.element
+    var res = res0 && res1
+    // pointer 指针不断向后指，进行正序遍历
+    pointer = pointer.next;
+    return res;
+}
+function isPalindrome(head) {
+    pointer = head;
+    debugger
+    return reverseLinkList(head);
+}
+var rs = isPalindrome(ll.head);
+console.log(rs);

@@ -100,7 +100,7 @@ function layer(tableData: ITreeNode[]) {
         }
         layerDict[layerId].push(treeNode)
     }
-    
+
     return layerDict
 }
 
@@ -133,3 +133,14 @@ function table2tree(tableData: ITreeNode[]) {
 // const rs = table2tree(tableData)
 // console.log(JSON.stringify(rs))
 
+function observeTree(treeData: ITreeNode[], handler?: any) {
+    return new Proxy(treeData, handler)
+}
+
+let obTreeData = observeTree(treeData, {
+    get(){
+        
+    }
+})
+
+// obTreeData
