@@ -19,11 +19,30 @@ var List = /** @class */ (function () {
         }
         return currNode;
     };
+    List.prototype.findPrevious = function (item) {
+        var currNode = this.head;
+        while ((currNode.next.element !== item) && !(currNode.next === null)) {
+            currNode = currNode.next;
+        }
+        return currNode;
+    };
+    List.prototype.findLast = function () {
+        var currNode = this.head;
+        while (currNode.next !== null) {
+            currNode = currNode.next;
+        }
+        return currNode;
+    };
     List.prototype.insert = function (newElement, item) {
         var newNode = new Node(newElement);
         var current = this.find(item);
         newNode.next = current.next;
         current.next = newNode;
+    };
+    List.prototype.append = function (newElement) {
+        var newNode = new Node(newElement);
+        var lastNode = this.findLast();
+        lastNode.next = newNode;
     };
     List.prototype.display = function () {
         var listArr = [];
@@ -33,13 +52,6 @@ var List = /** @class */ (function () {
             currNode = currNode.next;
         }
         console.log(listArr.join(' -> '));
-    };
-    List.prototype.findPrevious = function (item) {
-        var currNode = this.head;
-        while ((currNode.next.element !== item) && !(currNode.next === null)) {
-            currNode = currNode.next;
-        }
-        return currNode;
     };
     List.prototype.remove = function (item) {
         var prevNode = this.findPrevious(item);

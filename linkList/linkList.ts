@@ -15,9 +15,11 @@ export interface List<T> {
   head: Node<T>;
   find(item: T): Node<T>;
   insert(newElement: T, item: T): void;
+  append(newElement: T): void;
   remove(item: T): void;
   display(): void;
   findPrevious(item: T): Node<T>;
+  findLast(): Node<T>;
   remove(item: T): void;
 }
 
@@ -34,11 +36,33 @@ export class List<T> implements List<T>{
     return currNode
   }
 
+  findPrevious(item: T) {
+    let currNode = this.head
+    while ((currNode.next.element !== item) && !(currNode.next === null)) {
+      currNode = currNode.next
+    }
+    return currNode
+  }
+
+  findLast() {
+    let currNode = this.head
+    while (currNode.next !== null) {
+      currNode = currNode.next
+    }
+    return currNode
+  }
+
   insert(newElement: T, item: T) {
     let newNode = new Node<T>(newElement)
     let current = this.find(item)
     newNode.next = current.next
     current.next = newNode
+  }
+
+  append(newElement: T) {
+    let newNode = new Node<T>(newElement)
+    let lastNode = this.findLast()
+    lastNode.next = newNode
   }
 
   display() {
@@ -51,13 +75,6 @@ export class List<T> implements List<T>{
     console.log(listArr.join(' -> '));
   }
 
-  findPrevious(item: T) {
-    let currNode = this.head
-    while ((currNode.next.element !== item) && !(currNode.next === null)) {
-      currNode = currNode.next
-    }
-    return currNode
-  }
 
   remove(item: T) {
     var prevNode = this.findPrevious(item)
