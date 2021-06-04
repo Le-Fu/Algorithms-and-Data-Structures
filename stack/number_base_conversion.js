@@ -1,4 +1,4 @@
-var Stack = require('./stack.js');
+var Stack = require('./stack.ts');
 
 function mulBase(num, base) {
   var s = new Stack();

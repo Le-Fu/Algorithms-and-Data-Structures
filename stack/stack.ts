@@ -1,4 +1,4 @@
-interface Stack<T> {
+export interface Stack<T> {
   dataStore: T[];
   top: number;
   push(element: T): void;
@@ -8,7 +8,7 @@ interface Stack<T> {
   clear(): void;
 }
 
-class Stack<T> implements Stack<T> {
+export class Stack<T> implements Stack<T> {
   dataStore: T[] = [];
   top = 0;
   push(element: T) {
@@ -32,18 +32,18 @@ class Stack<T> implements Stack<T> {
   }
 }
 
-type strOrNum = string | number
+// type strOrNum = string | number
 //test
-var s = new Stack<strOrNum>();
+// var s = new Stack<strOrNum>();
 
-s.push('Simon');
-s.push('mengsio');
-s.push('tingjio');
-s.push(2);
+// s.push('Simon');
+// s.push('mengsio');
+// s.push('tingjio');
+// s.push(2);
 
-console.log(s.length());
-console.log(s.pop());
-console.log(s.peek());
-console.log(s.length());
+// console.log(s.length());
+// console.log(s.pop());
+// console.log(s.peek());
+// console.log(s.length());
 
 
