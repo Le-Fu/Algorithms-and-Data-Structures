@@ -75,6 +75,7 @@ var changeData = function fn(data) {
 		console.log(data.value);
 	}
 };
+
 changeData(data);
 
 
