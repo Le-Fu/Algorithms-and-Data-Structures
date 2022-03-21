@@ -27,8 +27,8 @@ function bSearchWithMutiTarget(arr, target) {
 }
 
 let arr = [1, 2, 3, 4, 4, 5, 6, 12, 17]
-
-let rs = bSearchWithMutiTarget(arr, 4)
+debugger
+let rs = bSearchWithMutiTarget(arr, 5)
 
 console.log(rs);
 

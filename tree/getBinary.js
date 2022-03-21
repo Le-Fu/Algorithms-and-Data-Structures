@@ -17,6 +17,6 @@ var getBinary = function (num) {
     return rs
 };
 
-var rs = getBinary(1);
+var rs = getBinary(10);
 
 console.log(rs)
