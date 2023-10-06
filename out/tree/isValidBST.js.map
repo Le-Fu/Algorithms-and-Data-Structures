@@ -1,0 +1,1 @@
+{"version":3,"file":"isValidBST.js","sourceRoot":"","sources":["../../tree/isValidBST.ts"],"names":[],"mappings":";;;AAAA,iCAA2B;AAE3B,SAAgB,UAAU,CAAC,IAAc;IACvC,IAAI,IAAI,GAAG,IAAI,eAAI,CAAC,IAAI,CAAC,CAAA;IACzB,OAAO,eAAI,CAAC,IAAI,CAAC,IAAI,CAAC,CAAA;AACxB,CAAC;AAHD,gCAGC"}

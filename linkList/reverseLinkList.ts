@@ -1,36 +1,30 @@
-import { List, Node } from "./LinkList";
+import { List, Node } from "./linkList";
 
-let testList = new List<string>("a");
-testList.append("b");
-testList.append("c");
-testList.append("d");
-testList.append("e");
+let testList = new List<number>(1);
+testList.append(2);
+testList.append(3);
+testList.append(4);
+testList.append(5);
 testList.display();
 
-// function reverseLinkList(head: Node<string>) {
-//   if (!head || head.next === null) {
-//     return head;
-//   }
-//   let p = head.next;
-//   head.next = null;
-//   while (p !== null) {
-//     let temp = p.next;
-//     p.next = head;
-//     head = p;
-//     p = temp;
-//   }
-
-//   return head;
-// }
-
-function reverseLinkList(head: Node<string>) {
-  if (head == null || head.next == null) {
-    return head;
+function reverseLinkList(head: Node<number>): Node<number> {
+  let prev = null;
+  let curr = head;
+  while (curr) {
+    let next = curr.next;
+    curr.next = prev;
+    prev = curr;
+    curr = next;
   }
-  const last: Node<string> = reverseLinkList(head.next);
-  head.next.next = head;
-  head.next = null;
-  return last;
+  return prev;
 }
 
-console.log(JSON.stringify(reverseLinkList(testList.head)));
+// let newHead = reverseLinkList(testList.head);
+// console.log(JSON.stringify(newHead, null, 2));
+
+var reverseBetween = function (head: Node<number>, left: number, right: number) {
+
+  return head;
+};
+
+reverseBetween(testList.head, 2, 4);

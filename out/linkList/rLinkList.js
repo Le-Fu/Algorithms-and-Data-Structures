@@ -1,34 +1,22 @@
 "use strict";
-exports.__esModule = true;
-var Node = /** @class */ (function () {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.List = void 0;
+var Node = (function () {
     function Node(element) {
         this.element = element;
         this.next = null;
     }
     return Node;
 }());
-exports.Node = Node;
-var List = /** @class */ (function () {
+var List = (function () {
     function List(element) {
-        this.head = new Node(element);
+        this.headElement = element;
+        this.head = new Node(this.headElement);
+        this.head.next = this.head;
     }
     List.prototype.find = function (item) {
         var currNode = this.head;
         while (currNode.element != item) {
-            currNode = currNode.next;
-        }
-        return currNode;
-    };
-    List.prototype.findPrevious = function (item) {
-        var currNode = this.head;
-        while ((currNode.next.element !== item) && !(currNode.next === null)) {
-            currNode = currNode.next;
-        }
-        return currNode;
-    };
-    List.prototype.findLast = function () {
-        var currNode = this.head;
-        while (currNode.next !== null) {
             currNode = currNode.next;
         }
         return currNode;
@@ -39,19 +27,19 @@ var List = /** @class */ (function () {
         newNode.next = current.next;
         current.next = newNode;
     };
-    List.prototype.append = function (newElement) {
-        var newNode = new Node(newElement);
-        var lastNode = this.findLast();
-        lastNode.next = newNode;
-    };
     List.prototype.display = function () {
-        var listArr = [];
         var currNode = this.head;
-        while (!(currNode === null)) {
-            listArr.push(currNode.element);
+        while (!(currNode === null) && currNode.element !== this.headElement) {
+            console.log(currNode.element);
             currNode = currNode.next;
         }
-        console.log(listArr.join(' -> '));
+    };
+    List.prototype.findPrevious = function (item) {
+        var currNode = this.head;
+        while ((currNode.next.element !== item) && !(currNode.next === null)) {
+            currNode = currNode.next;
+        }
+        return currNode;
     };
     List.prototype.remove = function (item) {
         var prevNode = this.findPrevious(item);
@@ -62,3 +50,4 @@ var List = /** @class */ (function () {
     return List;
 }());
 exports.List = List;
+//# sourceMappingURL=rLinkList.js.map

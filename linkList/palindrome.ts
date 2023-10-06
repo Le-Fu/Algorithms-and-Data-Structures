@@ -1,4 +1,4 @@
-import { List, Node } from './LinkList'
+import { List, Node } from './linkList'
 
 let testList = new List<string>('a')
 testList.append('b')
